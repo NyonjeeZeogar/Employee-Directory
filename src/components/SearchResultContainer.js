@@ -15,8 +15,7 @@ class SearchResultContainer extends Component {
 
   };
 
-  // When this component mounts, search the Giphy API for pictures of kittens
-  // onsafe_componentWillMount()
+
   componentDidMount() {
     API.search()
       .then(res => {
@@ -42,7 +41,6 @@ class SearchResultContainer extends Component {
     console.log("***in Filter*******");
     console.log(searchkey);
     console.log(this.state.result);
-    // this.state.result = this.state.result.filter(this.state.result => this.state.result.includes(searchkey));
     var filterResult = this.state.result.filter(person => person.firstName === searchkey)
 
     this.setState({
@@ -51,12 +49,10 @@ class SearchResultContainer extends Component {
     })
 
    
-    // console.log("FILTERD RESULT------")
-    // console.log(filterResult);
+
   }
 
 
-  // When the form is submitted, search the Giphy API for `this.state.search`
   handleFormSubmit = event => {
     event.preventDefault();
     const value = event.target.value;
@@ -64,7 +60,6 @@ class SearchResultContainer extends Component {
     console.log("**********");
     console.log(value);
     console.log(name);
-    //filter function here
     this.filterEmployees(value);
     this.setState({
 
@@ -76,17 +71,6 @@ class SearchResultContainer extends Component {
 
   };
 
-  // testFunction = () => {
-  //   { console.log("************") }
-  //   { console.log(this.state.result[0].picture) }
-  //   { console.log("+++++++++++++") }
-  // }
-  // filtertestfunction = () => {
-  //   const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-  //   const result2 = words.filter(word => word.includes("it"));
-  //   console.log(result2);
-  // }
-
   handleInputChange = event => {
     event.preventDefault();
     console.log(event);
@@ -95,9 +79,7 @@ class SearchResultContainer extends Component {
     console.log("**********");
     console.log(value);
     console.log(name);
-    //filter function be called here
-    // this.filterEmployees(value);
-    // this.filterEmployees(this.state.search);
+
     this.setState({
 
       [name]: value
@@ -108,8 +90,6 @@ class SearchResultContainer extends Component {
 
   render() {
 
-    // const{ data } = this.state.result;
-    //  const{ currentSort } = this.state;
     return (
       <div className="container">
         <div className="row">
